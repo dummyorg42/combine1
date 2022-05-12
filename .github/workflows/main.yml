@@ -15,15 +15,11 @@ jobs:
         with:
           label: ${{ github.event.ref }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          
-      - run: sudo chown runner:docker -R .
-      - run: sudo chmod 755 * -R
-      - run: sudo chmod 755 .* -R
-      - run: rm * -rf
+ 
       
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      #- uses: actions/checkout@v3
+      #  with:
+      #    fetch-depth: 0
           
       - name: Create pull request
         uses: devops-infra/action-pull-request@v0.4.1
