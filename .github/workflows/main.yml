@@ -14,9 +14,7 @@ jobs:
       - uses: bobvanderlinden/combine-pull-requests@v3
         with:
           label: experimentx
-          repo-token: abc
-          repoo-token: ${{ secrets.TOKEN }}
-          repooo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
