@@ -17,6 +17,8 @@ jobs:
         with:
           label: experiment
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          author-name: "Thibault DUPONCHELLE"
+          author-email: "thibault.duponchelle@gmail.com"
           
       - run: sudo chown runner:docker -R .
       - run: sudo chmod 755 * -R
