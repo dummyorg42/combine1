@@ -15,11 +15,6 @@ jobs:
         with:
           label: ${{ github.event.ref }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
- 
-      
-      #- uses: actions/checkout@v3
-      #  with:
-      #    fetch-depth: 0
           
       - name: Create pull request
         uses: devops-infra/action-pull-request@v0.4.1
