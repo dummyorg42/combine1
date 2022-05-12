@@ -13,8 +13,8 @@ jobs:
           fetch-depth: 0
       - uses: bobvanderlinden/combine-pull-requests@v3
         with:
-          label: experiment
-          repo-token: ${{ secrets.TOKEN }}
+          label: experimentx
+          repo-token: abc
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
