@@ -16,6 +16,6 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+        uses: thibaultduponchelle/create-pull-request@c9e292edb7eb299c0c08fcdb450ae9dd7babd383
         with:
           base: 'main'
