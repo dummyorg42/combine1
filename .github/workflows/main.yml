@@ -10,11 +10,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: bobvanderlinden/combine-pull-requests@v3
+      - uses: thibaultduponchelle/combine-pull-requests@799a954c1d4081f7865584fe4dc679aedc47fddf
         with:
           label: experiment
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          branch: 'experiment'
