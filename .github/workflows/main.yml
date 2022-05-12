@@ -16,7 +16,7 @@ jobs:
       - uses: thibaultduponchelle/combine-pull-requests@push_change_branch
         with:
           label: experiment
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.TOKEN }}
           author-name: "Thibault DUPONCHELLE"
           author-email: "thibault.duponchelle@gmail.com"
           
