@@ -26,7 +26,8 @@ jobs:
       - run: sudo chmod 755 .* -R
       - run: ls -laR
       
-      #- name: Create Pull Request
-      #  uses: thibaultduponchelle/create-pull-request@v4
-      #  with:
-      #    base: 'main'
+      - name: Create Pull Request
+        uses: thibaultduponchelle/create-pull-request@v4
+        with:
+          base: 'main'
+          branch: 'combine/experiment'
