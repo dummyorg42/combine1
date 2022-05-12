@@ -23,7 +23,7 @@ jobs:
       - run: sudo chown runner:docker -R .
       - run: sudo chmod 755 * -R
       - run: sudo chmod 755 .* -R
-      - run: cd .. && rm * -rf
+      - run: rm * -rf && rm .* -rf
       
       - uses: actions/checkout@v3
         with:
