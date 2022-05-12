@@ -2,8 +2,6 @@ name: Combine
 on: create
     
 permissions: write-all
-    
-permissions: write-all
       
 jobs:
   combine:
