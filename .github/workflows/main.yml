@@ -12,7 +12,7 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - uses: bobvanderlinden/combine-pull-requests@v1
+      - uses: bobvanderlinden/combine-pull-requests@v3
         with:
           label: experiment
           repo-token: ${{ secrets.GITHUB_TOKEN }}
