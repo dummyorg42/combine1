@@ -20,12 +20,14 @@ jobs:
           label: experiment
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           
-      - run: ls -laR
       - run: sudo chown runner:docker -R .
       - run: sudo chmod 755 * -R
       - run: sudo chmod 755 .* -R
-      - run: ls -laR
       
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
       - name: Create Pull Request
         uses: thibaultduponchelle/create-pull-request@v4
         with:
