@@ -2,6 +2,9 @@ name: Combine
 on:
   pull_request:
     types: [ opened, labeled, unlabeled ]
+    
+permissions: write-all
+  
 jobs:
   combine:
     runs-on: ubuntu-latest
@@ -9,13 +12,27 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: main
           fetch-depth: 0
-      - uses: bobvanderlinden/combine-pull-requests@v3
+      - uses: thibaultduponchelle/combine-pull-requests@push_change_branch
         with:
           label: experiment
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+          
+      - run: sudo chown runner:docker -R .
+      - run: sudo chmod 755 * -R
+      - run: sudo chmod 755 .* -R
+      - run: rm * -rf
+      
+      - uses: actions/checkout@v3
         with:
-          branch: 'experiment'
+          fetch-depth: 0
+          
+      - name: Create pull request
+        uses: devops-infra/action-pull-request@v0.4.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          title: Combine!
+          body: ""
+          source_branch: combine/experiment
+          target_branch: main
+          template: .github/PULL_REQUEST_TEMPLATE.md
