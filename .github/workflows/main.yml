@@ -3,9 +3,7 @@ on:
   pull_request:
     types: [ opened, labeled, unlabeled ]
     
-permissions:
-  contents: write
-  pull-requests: write
+permissions: write-all
   
 jobs:
   combine:
