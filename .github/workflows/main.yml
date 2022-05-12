@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [ opened, labeled, unlabeled ]
 jobs:
-  deploy:
+  combine:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' || github.event.label.name == 'experiment' }}
     steps:
