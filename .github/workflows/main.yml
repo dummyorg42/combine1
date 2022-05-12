@@ -20,6 +20,8 @@ jobs:
           label: experiment
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           
+      - run: ls -laR
+      
       - name: Create Pull Request
         uses: thibaultduponchelle/create-pull-request@4321720d07b5c111d085aa56dbcef5b64101a9bc
         with:
