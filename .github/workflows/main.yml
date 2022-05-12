@@ -1,6 +1,6 @@
 name: Combine
 on:
-  push: [ main ]
+  push:
   pull_request:
     types: [ opened, labeled, unlabeled ]
 jobs:
