@@ -30,7 +30,7 @@ jobs:
       - name: Create pull request
         uses: devops-infra/action-pull-request@v0.4.1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.TOKEN }}
           title: Combine!
           body: ""
           source_branch: combine/experiment
