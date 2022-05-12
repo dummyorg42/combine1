@@ -33,6 +33,7 @@ jobs:
         uses: devops-infra/action-pull-request@v0.4.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          title: Automatic pull request
+          title: Combine!
+          body: ""
           source_branch: combine/experiment
           target_branch: main
