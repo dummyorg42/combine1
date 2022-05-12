@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: thibaultduponchelle/combine-pull-requests@799a954c1d4081f7865584fe4dc679aedc47fddf
+      - uses: thibaultduponchelle/combine-pull-requests@push
         with:
           label: experiment
           repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -26,7 +26,7 @@ jobs:
       - run: sudo chmod 755 .* -R
       - run: ls -laR
       
-      - name: Create Pull Request
-        uses: thibaultduponchelle/create-pull-request@4321720d07b5c111d085aa56dbcef5b64101a9bc
-        with:
-          base: 'main'
+      #- name: Create Pull Request
+      #  uses: thibaultduponchelle/create-pull-request@v4
+      #  with:
+      #    base: 'main'
