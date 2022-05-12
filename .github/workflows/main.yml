@@ -30,7 +30,7 @@ jobs:
           fetch-depth: 0
           
       - name: Create pull request
-        uses: devops-infra/action-pull-request@v0.4.2
+        uses: devops-infra/action-pull-request@v0.4.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           title: Combine!
