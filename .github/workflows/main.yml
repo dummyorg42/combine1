@@ -1,21 +1,21 @@
 name: Combine
-on:
-  pull_request:
-    types: [ opened, labeled, unlabeled ]
+on: create
     
 permissions: write-all
-  
+    
+permissions: write-all
+      
 jobs:
   combine:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' || github.event.label.name == 'experiment' }}
+    if: ${{ github.event.ref_type == 'branch' }}
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: thibaultduponchelle/combine-pull-requests@push_change_branch
         with:
-          label: experiment
+          label: ${{ github.event.ref }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           
       - run: sudo chown runner:docker -R .
