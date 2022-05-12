@@ -22,7 +22,7 @@ jobs:
           
       - run: ls -laR
       - run: sudo chown runner:docker -R .
-      - run: sudo chmod 766 * -R
+      - run: sudo chmod 755 * -R
       - run: ls -laR
       
       - name: Create Pull Request
