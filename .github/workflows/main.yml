@@ -37,3 +37,4 @@ jobs:
           body: ""
           source_branch: combine/experiment
           target_branch: main
+          template: .github/PULL_REQUEST_TEMPLATE.md
