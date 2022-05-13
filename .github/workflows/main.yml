@@ -1,12 +1,16 @@
 name: Combine
-on: create
-    
+on: 
+  create:
+  issue_comment:
+    types:
+      - created
+      
 permissions: write-all
       
 jobs:
   combine:
     runs-on: ubuntu-latest
-    if: ${{ github.event.ref_type == 'branch' }}
+    if: ${{ github.event.ref_type == 'branch' || github.event.issue.pull_request}}
     steps:
       - uses: actions/checkout@v3
         with:
