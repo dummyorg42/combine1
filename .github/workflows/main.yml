@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
       - uses: thibaultduponchelle/combine-pull-requests@push
         with:
-          label: ${GITHUB_REF##*/}
+          label: "${GITHUB_REF##*/}"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Create pull request
@@ -26,6 +26,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           title: "label: ${{ github.event.ref }} (combined)"
           body: ""
-          source_branch: ${GITHUB_REF##*/}
+          source_branch: "${GITHUB_REF##*/}"
           target_branch: main
           template: .github/PULL_REQUEST_TEMPLATE.md
