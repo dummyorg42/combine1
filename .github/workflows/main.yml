@@ -1,23 +1,20 @@
 name: Combine
-on: 
-  create:
-  issue_comment:
-    types:
-      - created
+on: create
       
 permissions: write-all
       
 jobs:
   combine:
     runs-on: ubuntu-latest
-    if: ${{ github.event.ref_type == 'branch' || github.event.issue.pull_request}}
+    if: ${{ github.event.ref_type == 'branch'}}
     steps:
+        
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: thibaultduponchelle/combine-pull-requests@push
         with:
-          label: ${{GITHUB_REF##*/}}
+          label: ${{ github.event.ref }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Create pull request
@@ -26,6 +23,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           title: "label: ${{ github.event.ref }} (combined)"
           body: ""
-          source_branch: ${{GITHUB_REF##*/}}
+          source_branch: ${{ github.event.ref }}
           target_branch: main
           template: .github/PULL_REQUEST_TEMPLATE.md
