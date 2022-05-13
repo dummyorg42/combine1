@@ -24,7 +24,7 @@ jobs:
         uses: devops-infra/action-pull-request@v0.4.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          title: Combine!
+          title: "label: ${{ github.event.ref }} (combined)"
           body: ""
           source_branch: ${{ github.event.ref }}
           target_branch: main
