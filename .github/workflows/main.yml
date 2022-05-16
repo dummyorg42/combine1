@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: thibaultduponchelle/combine-pull-requests@fetch_commits
+      - uses: thibaultduponchelle/combine-pull-requests@fetch_commits_and_push
         with:
           label: ${{ github.event.ref }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
