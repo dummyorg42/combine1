@@ -26,3 +26,4 @@ jobs:
           source_branch: ${{ github.event.ref }}
           target_branch: main
           template: .github/BUNDLE_TEMPLATE.md
+          label: "bundle"
