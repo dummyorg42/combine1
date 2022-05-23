@@ -25,4 +25,4 @@ jobs:
           body: ""
           source_branch: ${{ github.event.ref }}
           target_branch: main
-          template: .github/PULL_REQUEST_TEMPLATE.md
+          template: .github/BUNDLE_TEMPLATE.md
